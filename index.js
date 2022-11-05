@@ -1,5 +1,5 @@
+const path = require("path");
 const express = require("express");
-const { MemoryStore } = require("express-session");
 const sessions = require("express-session");
 
 const routes = require("./routes");
@@ -27,6 +27,12 @@ app.use(
 app.use(express.json());
 // Parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+// set the view engine to ejs
+app.set("view engine", "ejs");
+
+// set views directory
+app.set("views", path.resolve(__dirname, "views"));
 
 app.use("/", routes);
 

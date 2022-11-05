@@ -3,26 +3,18 @@ function getLogin(req, res) {
     return res.redirect("/");
   }
 
-  res.setHeader("Content-Type", "text/HTML");
-  res.write(`
-        <h1>Login</h1>
-        <form method="post" action="/login">
-          <input type="text" name="username" placeholder="Username" /> <br>
-          <input type="password" name="password" placeholder="Password" /> <br>
-          <button type="submit">Login</button>
-        </form>
-      `);
-
-  res.end();
+  res.render("pages/login");
 }
 
 function postLogin(req, res) {
-  if (req.body.username !== "admin" || req.body.password !== "admin") {
-    return res.send("Invalid username or password");
+  if (req.body.userName !== "admin" || req.body.password !== "admin") {
+    return res.render("pages/login", {
+      errorMessage: "Invalid username or password",
+    });
   }
 
-  req.session.userId = req.body.username;
-
+  // Login success
+  req.session.userId = req.body.userName;
   res.redirect("/");
 }
 
