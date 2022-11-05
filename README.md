@@ -1,6 +1,17 @@
 # NodeJS Session Based Authentication
 An NodeJS example about session based authentication
 
+## Login
+
+- Login page:
+Use `admin/admin` to login
+![image](https://user-images.githubusercontent.com/19201982/200120776-9dab3ccd-f4b0-40e5-bc98-4c16d6ba2228.png)
+
+- Home page:
+![image](https://user-images.githubusercontent.com/19201982/200120793-c1b06b67-81b2-41d5-90eb-b110500f5259.png)
+
+
+
 ## Reference
 
 - [Session Based Authentication](https://roadmap.sh/guides/session-based-authentication)
